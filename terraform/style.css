@@ -1,50 +1,265 @@
-/* Reset browser defaults */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-/* Page styling */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f4f7fb;
-    color: #333;
+    background: #eef3f8;
+    color: #1f2937;
     line-height: 1.6;
 }
 
-/* Main content */
-.container {
-    width: 90%;
-    max-width: 1000px;
-    margin: 40px auto;
+.page {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 48px 24px;
 }
 
-/* Header */
-h1 {
-    color: #232f3e;
-    margin-bottom: 15px;
-    border-bottom: 4px solid #ff9900;
-    padding-bottom: 10px;
+/* --- Hero Section --- */
+.hero {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 28px;
+    align-items: stretch;
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    color: white;
+    border-radius: 24px;
+    padding: 48px;
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.18);
 }
 
-/* Section titles */
-h2 {
-    color: #232f3e;
-    margin-top: 35px;
-    margin-bottom: 15px;
+.eyebrow {
+    color: #f59e0b;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.82rem;
+    margin-bottom: 12px;
 }
 
-/* Paragraph spacing */
-p {
-    margin-bottom: 15px;
+.hero h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 18px;
 }
 
-/* Lists */
-ul {
-    margin-left: 25px;
+.hero-text p {
+    font-size: 1.08rem;
+    color: #dbeafe;
+    max-width: 720px;
 }
 
-li {
-    margin-bottom: 8px;
+/* --- Badges & Skills Common Layout --- */
+.badges, .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.badges {
+    margin-top: 28px;
+}
+
+.badges span {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* --- Live Deployment Card (Interactive) --- */
+.hero-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 28px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.hero-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.hero-card h2 {
+    margin: 12px 0;
+    font-size: 1.4rem;
+}
+
+.hero-card p {
+    color: #dbeafe;
+    font-size: 0.95rem;
+}
+
+.live {
+    color: #22c55e !important;
+    font-weight: 700;
+}
+
+/* --- Generic Containers --- */
+.summary,
+.two-column,
+.process,
+.outcome {
+    background: white;
+    border-radius: 20px;
+    padding: 34px;
+    margin-top: 28px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.summary h2,
+.two-column h2,
+.process h2,
+.outcome h2 {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+    color: #0f172a;
+}
+
+.summary p,
+.outcome p {
+    color: #4b5563;
+    font-size: 1rem;
+}
+
+/* --- Features Grid Cards --- */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 26px;
+    border-top: 5px solid #f59e0b;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.card h3 {
+    color: #0f172a;
+    margin-bottom: 10px;
+    font-size: 1.12rem;
+}
+
+.card p {
+    color: #4b5563;
+    font-size: 0.95rem;
+}
+
+/* --- Two Column Layout --- */
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 34px;
+}
+
+.two-column ul {
+    list-style: none;
+}
+
+.two-column li {
+    padding: 9px 0;
+    color: #374151;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.two-column li::before {
+    content: "✓";
+    color: #16a34a;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* --- Professional Skill Tags --- */
+.skills span {
+    background: #e0f2fe;
+    color: #075985;
+    border: 1px solid #bae6fd;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+/* --- Process Steps Timeline --- */
+.process {
+    position: relative;
+}
+
+.step {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 18px;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.step:last-child {
+    border-bottom: none;
+}
+
+.step span {
+    background: #0f172a;
+    color: #f59e0b;
+    font-weight: 800;
+    border-radius: 14px;
+    padding: 12px;
+    text-align: center;
+}
+
+.step p {
+    color: #374151;
+}
+
+/* --- Project Outcome Block --- */
+.outcome {
+    background: linear-gradient(135deg, #ffffff, #eff6ff);
+    border-left: 6px solid #2563eb;
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 900px) {
+    .hero,
+    .two-column {
+        grid-template-columns: 1fr;
+    }
+    
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .page {
+        padding: 24px 14px;
+    }
+    
+    .hero {
+        padding: 32px 24px;
+    }
+    
+    .cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
 }
